@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
 
   main: {
     flex: 1,
-
   },
 
   img: {

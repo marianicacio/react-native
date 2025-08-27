@@ -4,13 +4,21 @@ import { StyleSheet, Text, View, Image, SafeAreaView, Pressable, TouchableOpacit
 import Login from './src/pages/Login';
 import Card from './src/components/Card';
 import Button from './src/components/Button';
+import BasicModal from './src/components/BasicModal';
+import { useState } from 'react';
+
 
 export default function App() {
+  const [open, setOpen] = useState(false)
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar hidden />
-      <Login/>
-    {/* <Button label={'tem que botar'}/> */}
+      <TouchableOpacity onPress={() => setOpen(!open)}>
+        <Text style={styles.teste} >Modal</Text>
+      </TouchableOpacity>
+      <BasicModal visible={open} onClose={() => setOpen(false)} />
+      {/* <Login/> */}
+      {/* <Button label={'tem que botar'}/> */}
       {/* <Card title="coisa 1"/>
       <Card title="coisa 2"/>
       <Card title="coisa 3" image={require("./src/assets/images/avatar.png")}/> */}
@@ -21,5 +29,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  teste: {
+    textAlign: 'center',
   }
 })
