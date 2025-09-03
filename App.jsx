@@ -5,18 +5,28 @@ import Login from './src/pages/Login';
 import Card from './src/components/Card';
 import Button from './src/components/Button';
 import BasicModal from './src/components/BasicModal';
-import { useState } from 'react';
+import styled from 'styled-components';
+// import { useState } from 'react';
+
+const Container = styled.View`
+  flex: 1;
+  display: flex;
+  background-color: red;
+`
 
 
 export default function App() {
-  const [open, setOpen] = useState(false)
+  // const [open, setOpen] = useState(false)
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar hidden />
-      <TouchableOpacity onPress={() => setOpen(!open)}>
+      <Container>
+
+      </Container>
+      {/* <TouchableOpacity onPress={() => setOpen(!open)}>
         <Text style={styles.teste} >Modal</Text>
       </TouchableOpacity>
-      <BasicModal visible={open} onClose={() => setOpen(false)} />
+      <BasicModal visible={open} onClose={() => setOpen(false)} /> */}
       {/* <Login/> */}
       {/* <Button label={'tem que botar'}/> */}
       {/* <Card title="coisa 1"/>
